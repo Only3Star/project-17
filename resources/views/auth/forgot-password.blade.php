@@ -42,8 +42,12 @@
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
+					<br>
+						<x-auth-session-status class="mb-4 text-success" :status="session('status')" />
+						<x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 					</div>
 
+					<br>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Email Password Reset Link

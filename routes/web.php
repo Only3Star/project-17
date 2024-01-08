@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +32,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//เมนู User
+Route::get('admin/user/index',[UserController::class, 'index'])->name('u.index');
+//เมนู Category
+Route::get('admin/user/category',[CategoryController::class, 'category'])->name('u.category');
+Route::get('admin/user/category/createform',[CategoryController::class, 'createform'])->name('u.category.createform');
+Route::get('admin/user/category/edit',[CategoryController::class, 'edit'])->name('u.category.edit');
+//เมนู Product
+Route::get('admin/user/product',[ProductController::class, 'product'])->name('u.product');
+Route::get('admin/user/product/createform',[ProductController::class, 'createform'])->name('u.product.createform');
+Route::get('admin/user/product/edit',[ProductController::class, 'edit'])->name('u.product.edit');

@@ -92,13 +92,10 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Register
 						</button>
 					</div>
 					
-					<div class="text-center p-t-46 p-b-20">
-					<a href="{{ route('register') }}" class="txt2 bo1">Register</a>
-					</div>
 
 				</form>
 

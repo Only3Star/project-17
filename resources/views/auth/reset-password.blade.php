@@ -57,6 +57,7 @@
 					</div>
 					<x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
 
+					
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" name="password_confirmation">
