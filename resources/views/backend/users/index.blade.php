@@ -14,7 +14,6 @@
                 <th>Description</th>
                 <th>Created_at</th>
                 <th>Updated_at</th>
-                <th>Actions</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
@@ -27,8 +26,6 @@
               <td>2022-07-25 12:46:29</td>
               <td>2022-07-25 12:46:29</td>
               <td>
-              <a href="#" class="btn btn-warning">edit</a>
-              <a href="#" class="btn btn-danger">delete</a>
               </td>
               </tr>
             </tbody>
