@@ -10,6 +10,7 @@
                                     <label for="defaultFormControlInput" class="form-label">Name</label>
                                     <input
                                       type="text"
+                                      value="{{ $cat->name }}"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกประเภทสินค้า"

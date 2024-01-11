@@ -17,8 +17,9 @@ class CategoryController extends Controller
         return view ('backend.category.createform');
     }
 
-    public function edit(){
-        return view ('backend.category.edit');
+    public function edit($category_id){
+        $cat = Category::find($category_id);
+        return view ('backend.category.edit',compact('cat'));
     }
 
     public function insert(Request $request){

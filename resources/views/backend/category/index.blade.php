@@ -24,7 +24,7 @@
               <td>{{ $cat->created_at }}</td>
               <td>{{ $cat->updated_at }}</td>
               <td>
-                <a href="{{ route('u.category.edit')}}" class="btn btn-warning">edit</a>
+                <a href="{{ url('admin/user/category/edit/'.$cat->category_id )}}" class="btn btn-warning">edit</a>
                 <a href="#" class="btn btn-danger">delete</a>
               </td>
               </tr>
