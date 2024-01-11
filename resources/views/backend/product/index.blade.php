@@ -22,10 +22,10 @@
             <tbody class="table-border-bottom-0">
               <tr>
               <td>1</td>
-              <td>iphone 14 Pro Max</td>
-              <td>iphone.jpg</td>
-              <td>45,990 บาท</td>
-              <td>ผลิตโดยบริษัทแอปเปิ้ล</td>
+              <td>asdwa</td>
+              <td>asdwa</td>
+              <td>4awd990 บาท</td>
+              <td>awdawdawd</td>
               <td>2022-07-25 12:46:29</td>
               <td>2022-07-25 12:46:29</td>
               <td>

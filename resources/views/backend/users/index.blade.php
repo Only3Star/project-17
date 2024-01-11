@@ -7,27 +7,21 @@
           <table class="table mt-4">
             <thead class="table-dark">
               <tr>
-                <th>No</th>
+                <th>id</th>
                 <th>Name</th>
-                <th>images</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
+                <th>email</th>
+                <th>phone</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+              @foreach ($u as $user)
               <tr>
-              <td>1</td>
-              <td>iphone 14 Pro Max</td>
-              <td>iphone.jpg</td>
-              <td>45,990 บาท</td>
-              <td>ผลิตโดยบริษัทแอปเปิ้ล</td>
-              <td>2022-07-25 12:46:29</td>
-              <td>2022-07-25 12:46:29</td>
-              <td>
-              </td>
+              <td>{{ $user->id }}</td>
+              <td>{{ $user->name }}</td>
+              <td>{{ $user->email }}</td>
+              <td>{{ $user->phone }}</td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

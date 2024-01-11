@@ -19,6 +19,9 @@
   <link rel="shortcut icon" href="{{asset('backend/images/favicon.png') }}" />
 </head>
 <body>
+    <!-- ทำแจ้งเตือนด้วย sweetalert -->
+    @include('sweetalert::alert')
+
   <div class="container-scroller">
           <div class="d-flex align-items-center justify-content-between">
             <a href="https://www.bootstrapdash.com/product/royalui/"><i class="ti-home me-3 text-white"></i></a>
@@ -176,6 +179,12 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('dashboard') }}">
+              <i class="ti-write menu-icon"></i>
+              <span class="menu-title">DashBoard</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('u.index') }}">
               <i class="ti-shield menu-icon"></i>
@@ -194,40 +203,9 @@
               <span class="menu-title">Product</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{asset('backend/pages/tables/basic-table.html') }}">
-              <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">Tables</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{asset('backend/pages/icons/themify.html') }}">
-              <i class="ti-star menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="ti-user menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href=" {{asset('backend/pages/samples/login.html') }}"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('backend/pages/samples/login-2.html') }}"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('backend/pages/samples/register.html') }}"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('backend/pages/samples/register-2.html') }}"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('backend/pages/samples/lock-screen.html') }}"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="ti-write menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
+          
         </ul>
       </nav>
 

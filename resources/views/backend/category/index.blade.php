@@ -20,8 +20,8 @@
             <tbody class="table-border-bottom-0">
               <tr>
               <td>1</td>
-              <td>โทรศัพท์มือถือ</td>
-              <td> 3 ชิ้น</td>
+              <td>asdwa</td>
+              <td> 3awd</td>
               <td>2022-07-25 12:46:29</td>
               <td>2022-07-25 12:46:29</td>
               <td>
