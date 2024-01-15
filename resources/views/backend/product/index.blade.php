@@ -20,6 +20,7 @@
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+            @foreach ($product as $pro)
               <tr>
               <td>1</td>
               <td>asdwa</td>
@@ -29,10 +30,11 @@
               <td>2022-07-25 12:46:29</td>
               <td>2022-07-25 12:46:29</td>
               <td>
-              <a href="{{ route('u.product.edit')}}" class="btn btn-warning">edit</a>
+              <a href="{{ url('admin/user/product/edit/'.$pro->product_id )}}" class="btn btn-warning">edit</a>
               <a href="#" class="btn btn-danger">delete</a>
               </td>
               </tr>
+            @endforeach
             </tbody>
           </table>
         </div>

@@ -8,19 +8,19 @@
                                 <h5 class="card-header">Product</h5>
                                 <div class="card-body">
                                   <div>
+                                  <form method="POST" action="{{ url('admin/user/product/insert') }}">
+                                      @csrf
                                     <label for="defaultFormControlInput" class="form-label">Name</label>
                                     <input
-                                      type="text"
+                                      type="name"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกชื่อสินค้า"
                                       aria-describedby="defaultFormControlHelp"
                                     />
-
-                                    
                                     <label for="defaultFormControlInput" class="form-label">Price</label>
                                     <input
-                                      type="text"
+                                      type="price"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกราคาสินค้า"
@@ -29,7 +29,7 @@
 
                                     <label for="defaultFormControlInput" class="form-label">Description</label>
                                     <input
-                                      type="text"
+                                      type="description"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกรายละเอียดสินค้า"
@@ -50,8 +50,12 @@
                                         <input type="file" class="form-control" id="inputGroupFile02" />
                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                       </div>
-
-                                    <a href="" class="btn btn-primary mt-3">บันทึก</a>
+                                      <div class="mt-3">
+                                        @error('name')
+                                          <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                      </div>
+                                      <input type="submit" value="บันทึก" class="btn btn-primary mt-3">
                                     <a href="{{ route('u.product') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                                   </div>
                                 </div>

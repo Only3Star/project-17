@@ -25,10 +25,10 @@
               <td>{{ $cat->updated_at }}</td>
               <td>
                 <a href="{{ url('admin/user/category/edit/'.$cat->category_id )}}" class="btn btn-warning">edit</a>
-                <a href="#" class="btn btn-danger">delete</a>
+                <a href="{{ url('admin/user/category/delete/'.$cat->category_id )}}" class="btn btn-danger">delete</a>
               </td>
               </tr>
-              @endforeach
+            @endforeach
             </tbody>
           </table>
         </div>
