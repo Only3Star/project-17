@@ -48,5 +48,7 @@ Route::get('admin/user/category/delete/{id}',[CategoryController::class, 'delete
 //เมนู Product
 Route::get('admin/user/product',[ProductController::class, 'product'])->name('u.product');
 Route::get('admin/user/product/createform',[ProductController::class, 'createform'])->name('u.product.createform');
-Route::get('admin/user/product/edit/ {id}',[ProductController::class, 'edit']);
-Route::post('admin/user/product/insert',[ProductController::class, 'insert'])->name('u.product.edit');
+Route::get('admin/user/product/edit/{id}',[ProductController::class, 'edit']);
+Route::post('admin/user/product/insert',[ProductController::class, 'insert']);
+Route::post('admin/user/product/update/{id}',[ProductController::class, 'update']);
+Route::get('admin/user/product/delete/{id}',[ProductController::class, 'delete']);

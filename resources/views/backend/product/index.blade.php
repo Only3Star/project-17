@@ -22,21 +22,26 @@
             <tbody class="table-border-bottom-0">
             @foreach ($product as $pro)
               <tr>
-              <td>1</td>
-              <td>asdwa</td>
-              <td>asdwa</td>
-              <td>4awd990 บาท</td>
-              <td>awdawdawd</td>
-              <td>2022-07-25 12:46:29</td>
-              <td>2022-07-25 12:46:29</td>
+              <td>{{ $product->firstItem() + $loop->index }}</td>
+              <td>{{ $pro->name }}</td>
+              <td>
+                <img src="{{ asset('backend/product/resize/'.$pro->image) }}" alt="">
+              </td>
+              <td>{{ $pro->price }}</td>
+              <td>{{ $pro->description }}</td>
+              <td>{{ $pro->created_at }}</td>
+              <td>{{ $pro->updated_at }}</td>
               <td>
               <a href="{{ url('admin/user/product/edit/'.$pro->product_id )}}" class="btn btn-warning">edit</a>
-              <a href="#" class="btn btn-danger">delete</a>
+              <a href="{{ url('admin/user/product/delete/'.$pro->product_id )}}" class="btn btn-danger">delete</a>
               </td>
               </tr>
             @endforeach
             </tbody>
           </table>
+          <div class="mt-3 container">
+            {{ $product->links('pagination::bootstrap-5') }}
+          </div>
         </div>
       </div>
     </div>
