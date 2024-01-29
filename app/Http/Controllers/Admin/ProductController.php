@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use File;
 use Image;
 use Illuminate\Support\Str;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -17,12 +18,14 @@ class ProductController extends Controller
     }
 
     public function createform(){
-        return view ('backend.product.createform');
+        $category = Category ::all();
+        return view ('backend.product.createform',compact('category'));
     }
 
     public function edit($product_id){
-        $pro = Product::find($product_id);
-        return view ('backend.product.edit', compact('pro'));
+        $pro = Product ::find($product_id);
+        $cat = Category::all();
+        return view ('backend.product.edit',compact('cat','pro'));
     }
 
     public function insert(Request $request){
@@ -32,7 +35,6 @@ class ProductController extends Controller
         'name' => 'required|max:255',
         'price' => 'required|max:255',
         'description' => 'required',
-        'category_id' => 'required',
         'image' => 'mimes:jpg,jpeg,png',
         ],
         [
@@ -41,7 +43,6 @@ class ProductController extends Controller
         'price.required' => 'กรุณากรอกราคาสินค้า',
         'price.max'=> 'กรอกข้อมูลได้ 255 ตัวอักษร',
         'description.required' => 'กรุณากรอกรายละเอียดสินค้า',
-        'category_id.required' => 'กรุณาเลือกประเภทสินค้า',
         'image.mimes' => 'อัพโหลดภาพที่มีนานสกุล .jpg .jpeg .png ได้เท่านั้น',
         ]);
         
@@ -70,7 +71,6 @@ class ProductController extends Controller
         'name' => 'required|max:255',
         'price' => 'required|max:255',
         'description' => 'required',
-        'category_id' => 'required',
         'image' => 'mimes:jpg,jpeg,png',
         ],
         [
@@ -79,7 +79,6 @@ class ProductController extends Controller
         'price.required' => 'กรุณากรอกราคาสินค้า',
         'price.max'=> 'กรอกข้อมูลได้ 255 ตัวอักษร',
         'description.required' => 'กรุณากรอกรายละเอียดสินค้า',
-        'category_id.required' => 'กรุณาเลือกประเภทสินค้า',
         'image.mimes' => 'อัพโหลดภาพที่มีนานสกุล .jpg .jpeg .png ได้เท่านั้น',
         ]);
 
@@ -97,22 +96,22 @@ class ProductController extends Controller
             $request->file('image')->move(public_path().'/backend/product/',$filesname);
             Image::make(public_path().'/backend/product/'. $filesname)->resize(250,250)->save(public_path().'/backend/product/resize/'.$filesname);
             $product->image = $filesname;
-        }else{
-            $product->image = 'no_image.jpg';
         }
         $product ->update();
         alert()->success('แก้ไขข้อมูลสำเร็จ','ข้อมูลนี้แก้ไขแล้ว');
         return redirect()->route('u.product');
     }
 
-    public function delete(Request $request, $product_id){
+    public function delete($product_id){
         $product = Product::find($product_id);
-            if($product->File != 'no_image.jpg'){
-                File::delete(public_path() . '/backend/product/' . $product->image);
-                File::delete(public_path() . '/backend/product/resize/' . $product->image);
-            }
-            $product->delete();
-            alert()->success('ลบข้อมูลสำเร็จ','ข้อมูลนี้ถูกลบแล้ว');
-            return redirect()->route('u.product');
-    }        
+        if($product->image != 'no_image.jpg'){
+            File::delete(public_path() .
+            '/backend/product/'.$product->image);
+            File::delete(public_path() .
+            '/backend/product/resize/'.$product->image);               
+        }
+        $product->delete();
+        alert()->success('ลบข้อมูลสำเร็จ','ข้อมูลนี้ถูกลบแล้ว');
+        return redirect()->route('u.product');
+    }       
 }     
