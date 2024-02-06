@@ -66,21 +66,7 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $product_id){
-     //ป้องกันการกรอกข้อมูลผ่านฟอร์ม
-        $validated = $request->validate([
-        'name' => 'required|max:255',
-        'price' => 'required|max:255',
-        'description' => 'required',
-        'image' => 'mimes:jpg,jpeg,png',
-        ],
-        [
-        'name.required' => 'กรุณากรอกข้อมูลสินค้า',
-        'name.max'=> 'กรอกข้อมูลได้ 255 ตัวอักษร',
-        'price.required' => 'กรุณากรอกราคาสินค้า',
-        'price.max'=> 'กรอกข้อมูลได้ 255 ตัวอักษร',
-        'description.required' => 'กรุณากรอกรายละเอียดสินค้า',
-        'image.mimes' => 'อัพโหลดภาพที่มีนานสกุล .jpg .jpeg .png ได้เท่านั้น',
-        ]);
+
 
         $product = Product::find($product_id);
         $product ->name = $request->name;
@@ -88,9 +74,9 @@ class ProductController extends Controller
         $product ->description = $request->description;
         $product ->category_id = $request->category_id;
         if($request->hasFile('image')){
-            if($product->File != 'no_image.jpg'){
-                File::delete(public_path() . '/backend/product/' . $product->file);
-                File::delete(public_path() . '/backend/product/resize/' . $product->file);
+            if($product->image != 'no_image.jpg'){
+                File::delete(public_path() . '/backend/product/' . $product->image);
+                File::delete(public_path() . '/backend/product/resize/' . $product->image);
             }
             $filesname = Str::random(10). '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path().'/backend/product/',$filesname);

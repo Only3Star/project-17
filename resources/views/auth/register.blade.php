@@ -77,13 +77,6 @@
                     </div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
-
 						<div>
 						<a href="{{ route('password.request') }}" class="txt2 bo1 m-1-5 ">Forgot?</a>
 						</div>
