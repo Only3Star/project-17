@@ -57,7 +57,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="{{asset('backend/images/faces/pun.jpg') }}" alt="profile"/>
+              <img src="{{asset('backend/images/faces/face.jpg') }}" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{{ route('profile.edit') }}">
@@ -89,25 +89,26 @@
         <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="{{ route('dashboard') }}">
-              <i class="ti-write menu-icon"></i>
+              <i class="ti-home menu-icon"></i>
               <span class="menu-title">DashBoard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('u.index') }}">
-              <i class="ti-shield menu-icon"></i>
+              <i class="ti-user menu-icon"></i>
               <span class="menu-title">User</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('u.category') }}">
-              <i class="ti-layout-list-post menu-icon"></i>
+              <i class="ti-agenda menu-icon"></i>
               <span class="menu-title">Category</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('u.product') }}">
-              <i class="ti-pie-chart menu-icon"></i>
+            <a class="nav-link" href="{{ route('u.product') }}">                                 
+
+              <i class="ti-layers-alt menu-icon"></i>
               <span class="menu-title">Product</span>
             </a>
           </li>
